@@ -27,44 +27,58 @@ function removeFromCart(index) {
 }
 
 function updateCart() {
-    const cartItemsElement = document.getElementById('cart-items');
+    const cartList = document.getElementById('cart-items');
     const totalPriceElement = document.getElementById('total-price');
     let cartHTML = '';
     let totalPrice = 0;
 
-    if (cart.length === 0) {
-        totalPriceElement.textContent = 'Total: R$0,00';
-        cartItemsElement.innerHTML = '';
-        return;
-    }
+    cartList.innerHTML = '';
 
     cart.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.classList.add('cart-item');
+
+        const quantity = document.createElement('span');
+        quantity.textContent = `${item.quantity}x `;
+        card.appendChild(quantity);
+
+        const size = document.createElement('span');
+        size.textContent = `Pizza ${item.size}, `;
+        card.appendChild(size);
+
+        const flavor = document.createElement('span');
+        flavor.textContent = `sabor ${item.flavor}, `;
+        card.appendChild(flavor);
+
+        const edge = document.createElement('span');
+        edge.textContent = `borda ${item.edge}, `;
+        card.appendChild(edge);
+
+        const accompaniment = document.createElement('span');
+        accompaniment.textContent = `acompanhamento ${item.accompaniment}`;
+        card.appendChild(accompaniment);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remover';
+        removeButton.addEventListener('click', () => {
+            removeFromCart(index);
+        });
+        card.appendChild(removeButton);
+
+        cartList.appendChild(card);
+
         const sizePrice = prices.size[item.size];
         const flavorPrice = prices.flavor[item.flavor];
         const edgePrice = prices.edge[item.edge];
         const accompanimentPrice = prices.accompaniment[item.accompaniment];
-
-        // Calcula o preço total deste item
         const itemTotalPrice = sizePrice + flavorPrice + edgePrice + accompanimentPrice;
-
-        // Multiplica pelo número de unidades do item
+        
         const itemTotalPriceWithQuantity = itemTotalPrice * item.quantity;
 
-        // Adiciona ao preço total geral
         totalPrice += itemTotalPriceWithQuantity;
-
-        cartHTML += `
-            <li>
-                ${item.quantity}x Pizza ${item.size}, ${item.flavor}, borda ${item.edge}, ${item.accompaniment} ${item.delivery ? 'com delivery' : 'sem delivery'}
-                <button type="button" onclick="removeFromCart(${index})">Remover</button>
-                Preço: ${formatCurrency(itemTotalPriceWithQuantity)}
-            </li>
-        `;
     });
 
-    const totalPriceFormatted = formatCurrency(totalPrice);
-    cartItemsElement.innerHTML = cartHTML;
-    totalPriceElement.textContent = `Total: ${totalPriceFormatted}`;
+    totalPriceElement.textContent = `Total: ${formatCurrency(totalPrice)}`;
 }
 
 function clearCart() {
@@ -79,13 +93,10 @@ function finalizeOrder() {
         return;
     }
 
-    // Formatar mensagem
     const formattedMessage = generateOrderMessage();
 
-    // Enviar mensagem pelo WhatsApp
     handleSubmitWhatsappMessage(whatsapp, formattedMessage);
 
-    // Limpar o carrinho após finalizar o pedido
     clearCart();
 }
 
