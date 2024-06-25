@@ -1,6 +1,17 @@
 let cart = [];
 
+function isOpen() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    return currentHour >= 18 && currentHour <= 23;
+}
+
 function addToCart() {
+    if (!isOpen()) {
+        alert('A loja está fechada. Os pedidos só podem ser feitos entre 18:00 e 23:59.');
+        return;
+    }
+
     const size = document.getElementById('size').value;
     const flavor = document.getElementById('flavor').value;
     const edge = document.getElementById('edge').value;
@@ -72,9 +83,7 @@ function updateCart() {
         const edgePrice = prices.edge[item.edge];
         const accompanimentPrice = prices.accompaniment[item.accompaniment];
         const itemTotalPrice = sizePrice + flavorPrice + edgePrice + accompanimentPrice;
-        
         const itemTotalPriceWithQuantity = itemTotalPrice * item.quantity;
-
         totalPrice += itemTotalPriceWithQuantity;
     });
 
@@ -87,6 +96,11 @@ function clearCart() {
 }
 
 function finalizeOrder() {
+    if (!isOpen()) {
+        alert('A loja está fechada. Os pedidos só podem ser feitos entre 18:00 e 23:59.');
+        return;
+    }
+
     const whatsapp = document.getElementById('whatsapp').value;
     if (typeof whatsapp !== 'string' || whatsapp === "") {
         alert('Digite um número de Whatsapp válido');
@@ -94,9 +108,7 @@ function finalizeOrder() {
     }
 
     const formattedMessage = generateOrderMessage();
-
     handleSubmitWhatsappMessage(whatsapp, formattedMessage);
-
     clearCart();
 }
 
