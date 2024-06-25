@@ -1,0 +1,12 @@
+{
+    "name": "my-website",
+    "version": "1.0.0",
+    "scripts": {
+    "build": "copyfiles -u 1 src/**/* dist",
+    "start": "live-server dist/"
+    },
+    "devDependencies": {
+        "copyfiles": "^2.4.1",
+        "live-server": "^1.2.0"
+    }
+}

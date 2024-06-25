@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Pizza</title>
+    <script src="js/message.js" defer></script>
+    <script src="js/form.js" defer></script>
+    <script src="js/calculatePrice.js" defer></script>
+    <script src="js/formatCurrency.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/price.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <h1>Faça seu Pedido de Pizza</h1>
+
+    <form id="pizza-form">
+        <div>
+            <label for="size">Tamanho da Pizza:</label>
+            <select id="size" name="size" required>
+                <option value="pequena">Pequena</option>
+                <option value="media">Média</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="flavor">Sabor da Pizza:</label>
+            <select id="flavor" name="flavor" required>
+                <option value="peperoni">Peperoni</option>
+                <option value="mussarela">Mussarela</option>
+                <option value="frango">Frango</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="edge">Borda:</label>
+            <select id="edge" name="edge" required>
+                <option value="catupiry">Catupiry</option>
+                <option value="cheddar">Cheddar</option>
+                <option value="sem borda">Sem borda</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="accompaniment">Acompanhamentos:</label>
+            <select id="accompaniment" name="accompaniment" required>
+                <option value="coca-cola">Coca-Cola</option>
+                <option value="guarana">Guaraná</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+        </div>
+
+        <div>
+            <label for="delivery">Delivery:</label>
+            <input type="checkbox" id="delivery" name="delivery">
+        </div>
+
+        <div>
+            <label for="whatsapp">Número do WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" required>
+        </div>
+
+        <div>
+            <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+    </form>
+
+    <div id="cart">
+        <h2>Carrinho</h2>
+        <ul id="cart-items">
+        </ul>
+        <h3>Total: <span id="total-price">R$0,00</span></h3>
+        <button type="button" onclick="clearCart()">Limpar Carrinho</button>
+        <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
+    </div>
+</body>
+</html>
