@@ -269,10 +269,13 @@ main{
     margin: 0 auto;
     justify-content: space-between;
     color: white;
+    align-items: center;
 }
+
 
 .cartContainer{
     background-color: rgb(155, 20, 20);
+    box-shadow: 0px -4px 10px rgb(32, 32, 32);
     position: fixed;
     bottom: 0px;
     width: 100vw;

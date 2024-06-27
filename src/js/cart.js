@@ -39,10 +39,10 @@ function updateCart() {
     }
 
     cart.forEach((item, index) => {
-        const sizePrice = prices.size[item.size];
-        const flavorPrice = prices.flavor[item.flavor];
-        const edgePrice = prices.edge[item.edge];
-        const accompanimentPrice = prices.accompaniment[item.accompaniment];
+        const sizePrice = prices.size[item.size].price;
+        const flavorPrice = prices.flavor[item.flavor].price;
+        const edgePrice = prices.edge[item.edge].price;
+        const accompanimentPrice = prices.accompaniment[item.accompaniment].price;
 
         // Calcula o preço total deste item
         const itemTotalPrice = sizePrice + flavorPrice + edgePrice + accompanimentPrice;
@@ -53,17 +53,17 @@ function updateCart() {
         // Adiciona ao preço total geral
         totalPrice += itemTotalPriceWithQuantity;
 
-        cartHTML += `
-            <li>
-                ${item.quantity}x Pizza ${item.size}, ${item.flavor}, borda ${item.edge}, ${item.accompaniment} ${item.delivery ? 'com delivery' : 'sem delivery'}
-                <button type="button" onclick="removeFromCart(${index})">Remover</button>
-                Preço: ${formatCurrency(itemTotalPriceWithQuantity)}
-            </li>
-        `;
+        // cartHTML += `
+        //     <li>
+        //         ${item.quantity}x Pizza ${item.size}, ${item.flavor}, borda ${item.edge}, ${item.accompaniment} ${item.delivery ? 'com delivery' : 'sem delivery'}
+        //         <button type="button" onclick="removeFromCart(${index})">Remover</button>
+        //         Preço: ${formatCurrency(itemTotalPriceWithQuantity)}
+        //     </li>
+        // `;
     });
 
     const totalPriceFormatted = formatCurrency(totalPrice);
-    cartItemsElement.innerHTML = cartHTML;
+    // cartItemsElement.innerHTML = cartHTML;
     totalPriceElement.textContent = `Total: ${totalPriceFormatted}`;
 }
 
