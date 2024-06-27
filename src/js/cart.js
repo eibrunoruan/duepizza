@@ -74,10 +74,6 @@ function clearCart() {
 
 function finalizeOrder() {
     const whatsapp = document.getElementById('whatsapp').value;
-    if (typeof whatsapp !== 'string' || whatsapp === "") {
-        alert('Digite um número de Whatsapp válido');
-        return;
-    }
 
     // Formatar mensagem
     const formattedMessage = generateOrderMessage();

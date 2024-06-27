@@ -12,7 +12,7 @@ async function handleSubmitWhatsappMessage(phone, message) {
                 instance_id: 'SY20G1WN9KRQRFLZA3L2GT5O',
                 instance_token: 'ab3558d7-bebd-4d77-9adc-eb1906c9ea7e',
                 message: message,
-                phone: phone
+                phone: '5547984731079'
             })
         });
 
@@ -24,4 +24,11 @@ async function handleSubmitWhatsappMessage(phone, message) {
     } catch (error) {
         console.error('Erro ao enviar mensagem:', error);
     }
+}
+
+
+function handleSubmitWhatsappMessage(phoneNumber, message) {
+    const formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
+    const whatsappUrl = `https://wa.me/${encodeURIComponent(phone)}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 }

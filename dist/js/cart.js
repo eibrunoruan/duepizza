@@ -44,10 +44,13 @@ function updateCart() {
         const edgePrice = prices.edge[item.edge];
         const accompanimentPrice = prices.accompaniment[item.accompaniment];
 
+        // Calcula o preço total deste item
         const itemTotalPrice = sizePrice + flavorPrice + edgePrice + accompanimentPrice;
 
+        // Multiplica pelo número de unidades do item
         const itemTotalPriceWithQuantity = itemTotalPrice * item.quantity;
 
+        // Adiciona ao preço total geral
         totalPrice += itemTotalPriceWithQuantity;
 
         cartHTML += `
@@ -71,15 +74,14 @@ function clearCart() {
 
 function finalizeOrder() {
     const whatsapp = document.getElementById('whatsapp').value;
-    if (typeof whatsapp !== 'string' || whatsapp === "") {
-        alert('Digite um número de Whatsapp válido');
-        return;
-    }
 
+    // Formatar mensagem
     const formattedMessage = generateOrderMessage();
 
+    // Enviar mensagem pelo WhatsApp
     handleSubmitWhatsappMessage(whatsapp, formattedMessage);
 
+    // Limpar o carrinho após finalizar o pedido
     clearCart();
 }
 

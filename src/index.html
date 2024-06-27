@@ -12,73 +12,105 @@
     <script src="js/api.js" defer></script>
     <script src="js/price.js" defer></script>
     <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Faça seu Pedido de Pizza</h1>
-
-    <form id="pizza-form">
-        <div>
-            <label for="size">Tamanho da Pizza:</label>
-            <select id="size" name="size" required>
-                <option value="pequena">Pequena</option>
-                <option value="media">Média</option>
-                <option value="grande">Grande</option>
-            </select>
+    <header>
+        <div class="containerHeader">
+            <div class="backOption">
+                <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png" alt="">
+            </div>
+            <div class="imgHeader">
+                <img src="https://duepizza.com.br/wp-content/uploads/2023/06/Due-PIzza-novo-logo.png">
+            </div>
+            <div class="menuOption">
+                <img src="https://cdn-icons-png.flaticon.com/128/3502/3502458.png" alt="">
+            </div>
         </div>
+    </header>
+    <main>
 
-        <div>
-            <label for="flavor">Sabor da Pizza:</label>
-            <select id="flavor" name="flavor" required>
-                <option value="peperoni">Peperoni</option>
-                <option value="mussarela">Mussarela</option>
-                <option value="frango">Frango</option>
-            </select>
-        </div>
+        <form id="pizza-form">
+            <section class="pizzaSize">
+                <label for="size">Escolha o tamanho</label>
+                <select id="size" name="size" required>
+                    <option value="pequena">Pequena</option>
+                    <option value="media">Média</option>
+                    <option value="grande">Grande</option>
+                </select>
+            </section>
 
-        <div>
-            <label for="edge">Borda:</label>
-            <select id="edge" name="edge" required>
-                <option value="catupiry">Catupiry</option>
-                <option value="cheddar">Cheddar</option>
-                <option value="sem borda">Sem borda</option>
-            </select>
-        </div>
+            <section class="pizzaFlavor">
+                <label for="flavor">Sabores</label>
+                <div class="flavorContainer">
+                    <select id="flavor" name="flavor" required>
+                        <option value="peperoni">Peperoni</option>
+                        <option value="mussarela">Mussarela</option>
+                        <option value="frango">Frango</option>
+                    </select>
+                    <div class="flavorContent">
+                        <div class="imgFlavor">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR86I_XYXlakoa5ZTkjQyVdHMLdBsaj5yKJg&s" alt="">
+                        </div>
+                        <p id="flavorDescription">Pepperoni delicioso e picante</p>
+                    </div>
+                </div>
+            </section>
 
-        <div>
-            <label for="accompaniment">Acompanhamentos:</label>
-            <select id="accompaniment" name="accompaniment" required>
-                <option value="coca-cola">Coca-Cola</option>
-                <option value="guarana">Guaraná</option>
-            </select>
-        </div>
+            <section class="pizzaEdgeBackground">
+                <section class="pizzaEdge">
+                    <label for="edge">Borda</label>
+                    <select id="edge" name="edge" required>
+                        <option value="catupiry">Catupiry</option>
+                        <option value="cheddar">Cheddar</option>
+                        <option value="sem borda">Sem borda</option>
+                    </select>
+                </section>
+            </section>
 
-        <div>
-            <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1">
-        </div>
+            <section class="pizzaAccompaniment">
+                <label for="accompaniment">Acompanhamentos</label>
+                <select id="accompaniment" name="accompaniment" required>
+                    <option value="coca-cola">Coca-Cola</option>
+                    <option value="guarana">Guaraná</option>
+                </select>
+            </section>
 
-        <div>
-            <label for="delivery">Delivery:</label>
-            <input type="checkbox" id="delivery" name="delivery">
-        </div>
+            <section class="pizzaQuantityBackground">
+                <div class="pizzaQuantity">
+                    <label for="quantity">Quantidade:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                </div>
+            </section>
 
-        <div>
-            <label for="whatsapp">Número do WhatsApp:</label>
-            <input type="text" id="whatsapp" name="whatsapp" required>
-        </div>
+            <section class="pizzaDelivery">
+                <div class="deliveryContent">
+                    <label for="delivery">Delivery:</label>
+                    <input type="checkbox" id="delivery" name="delivery">
+                </div>
+                <div class="deliveryContent">
+                    <label for="whatsapp">Número do WhatsApp:</label>
+                    <input type="text" id="whatsapp" name="whatsapp" required>
+                </div>
+            </section>
 
-        <div>
-            <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
-        </div>
-    </form>
+            <section class="pizzaButton">
+                <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+                <div>
+                    <button type="button" onclick="clearCart()">Limpar Carrinho</button>
+                    <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
+                </div>
+            </section>
+        </form>
 
-    <div id="cart">
-        <h2>Carrinho</h2>
-        <ul id="cart-items">
-        </ul>
-        <h3>Total: <span id="total-price">R$0,00</span></h3>
-        <button type="button" onclick="clearCart()">Limpar Carrinho</button>
-        <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
-    </div>
+        <section class="cartContainer">
+            <div id="cart" class="pizzaCart">
+                <h2>Carrinho</h2>
+                <ul id="cart-items">
+                </ul>
+                <h3>Total: <span id="total-price">R$0,00</span></h3>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

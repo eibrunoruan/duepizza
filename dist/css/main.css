@@ -1,0 +1,207 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerHeader{
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.imgHeader img{
+    display: block;
+    width: 100%;
+    max-width: 75px;
+}
+
+.backOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+.menuOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+.pizzaSize{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(155, 20, 20);
+    color: white;
+    padding: 50px 0px 70px 0px;
+    text-align: center;
+    margin-bottom: 75px;
+    position: relative;
+}
+
+.pizzaSize label{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.pizzaSize select{
+    position: absolute;
+    bottom: -20px;
+    left: 28%;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    width: 45%;
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+}
+
+
+.pizzaFlavor{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.pizzaFlavor label{
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.pizzaFlavor select{
+    border: 2px solid rgb(155, 20, 20);
+    border-radius:5px;
+    padding: 10px;
+    font-size: 1.25rem;
+    background-color: rgb(155, 20, 20);
+    color: white;
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+}
+
+.flavorContainer{
+    padding: 20px 30px;
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flavorContent{
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    gap: 20px;
+}
+
+.imgFlavor{
+    min-width: 40%;
+}
+
+.imgFlavor img{
+    display: block;
+    width: 100%;
+    max-width: max;
+    border-radius: 5px;
+}
+
+.pizzaEdgeBackground{
+    background-color: rgb(155, 20, 20);
+    margin: 50px 0;
+    padding: 60px;
+}
+
+.pizzaEdge{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.pizzaEdge label{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pizzaEdge select{
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    width: 45%;
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgb(53, 53, 53);
+}
+
+.pizzaAccompaniment{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    align-items: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.pizzaAccompaniment label{
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.pizzaAccompaniment select{
+    border: none;
+    border-radius:5px;
+    padding: 10px;
+    font-size: 1.25rem;
+    background-color: white;
+    color: rgb(155, 20, 20);
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+}
+
+.pizzaQuantityBackground{
+    background-color: rgb(155, 20, 20);
+    margin: 50px 0;
+    padding: 60px;
+}
+
+.pizzaQuantity{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.pizzaQuantity label{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pizzaQuantity input{
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    width: 45%;
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgb(53, 53, 53);
+}
+
