@@ -4,6 +4,11 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+main{
+    position: relative;
+    bottom: 0px;
+}
+
 .containerHeader{
     display: flex;
     align-items: center;
@@ -65,7 +70,6 @@ body{
 .pizzaFlavor{
     display: flex;
     flex-direction: column;
-    max-width: 350px;
     margin: 0 auto;
     align-items: center;
 }
@@ -94,6 +98,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 250px;
 }
 
 .flavorContent{
@@ -110,7 +115,7 @@ body{
 .imgFlavor img{
     display: block;
     width: 100%;
-    max-width: max;
+    max-width: 100px;
     border-radius: 5px;
 }
 
@@ -205,3 +210,70 @@ body{
     box-shadow: 0px 2px 5px rgb(53, 53, 53);
 }
 
+.pizzaDelivery{
+    display: flex;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.pizzaDelivery label{
+    color: rgb(155, 20, 20);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.deliveryContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.pizzaButton{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 125px;
+}
+
+.pizzaButton > div{
+    display: flex;
+    gap: 20px;
+}
+
+.pizzaButton button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+    transition: 0.7s;
+    height: 40px;
+}
+
+.pizzaButton button:active{
+    height: 60px;
+}
+
+.pizzaCart{
+    display: flex;
+    max-width: 350px;
+    margin: 0 auto;
+    justify-content: space-between;
+    color: white;
+}
+
+.cartContainer{
+    background-color: rgb(155, 20, 20);
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+}

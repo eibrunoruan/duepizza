@@ -52,7 +52,7 @@
                         <div class="imgFlavor">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR86I_XYXlakoa5ZTkjQyVdHMLdBsaj5yKJg&s" alt="">
                         </div>
-                        <p id="flavorDescription">Rodelas de pepperoni, queijo mussarela, molho de tomate caseiro e orégano.</p>
+                        <p id="flavorDescription">Pepperoni delicioso e picante</p>
                     </div>
                 </div>
             </section>
@@ -83,29 +83,34 @@
                 </div>
             </section>
 
-            <div>
-                <label for="delivery">Delivery:</label>
-                <input type="checkbox" id="delivery" name="delivery">
-            </div>
+            <section class="pizzaDelivery">
+                <div class="deliveryContent">
+                    <label for="delivery">Delivery:</label>
+                    <input type="checkbox" id="delivery" name="delivery">
+                </div>
+                <div class="deliveryContent">
+                    <label for="whatsapp">Número do WhatsApp:</label>
+                    <input type="text" id="whatsapp" name="whatsapp" required>
+                </div>
+            </section>
 
-            <div>
-                <label for="whatsapp">Número do WhatsApp:</label>
-                <input type="text" id="whatsapp" name="whatsapp" required>
-            </div>
-
-            <div>
+            <section class="pizzaButton">
                 <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
-            </div>
+                <div>
+                    <button type="button" onclick="clearCart()">Limpar Carrinho</button>
+                    <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
+                </div>
+            </section>
         </form>
 
-        <div id="cart">
-            <h2>Carrinho</h2>
-            <ul id="cart-items">
-            </ul>
-            <h3>Total: <span id="total-price">R$0,00</span></h3>
-            <button type="button" onclick="clearCart()">Limpar Carrinho</button>
-            <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
-        </div>
+        <section class="cartContainer">
+            <div id="cart" class="pizzaCart">
+                <h2>Carrinho</h2>
+                <ul id="cart-items">
+                </ul>
+                <h3>Total: <span id="total-price">R$0,00</span></h3>
+            </div>
+        </section>
     </main>
 </body>
 </html>

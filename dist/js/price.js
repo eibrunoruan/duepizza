@@ -20,5 +20,10 @@ const prices = {
     }
 };
 
-const flavorOption = document.getElementById('flavor').value
+const flavorSelect = document.getElementById('flavor')
 
+const flavorDescription = document.getElementById('flavorDescription')
+
+flavorSelect.addEventListener('change', function(){
+    flavorDescription.innerHTML = `${prices.flavor[flavorSelect.value].description}`
+})
