@@ -18,13 +18,17 @@
     <header>
         <div class="containerHeader">
             <div class="backOption">
-                <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png" alt="">
+                <a href="./home.html">
+                    <img src="../assets/seta.png" alt="">
+                </a> 
             </div>
             <div class="imgHeader">
-                <img src="https://duepizza.com.br/wp-content/uploads/2023/06/Due-PIzza-novo-logo.png">
+                <a href="./home.html">
+                    <img src="../assets/logo.png">
+                </a>
             </div>
             <div class="menuOption">
-                <img src="https://cdn-icons-png.flaticon.com/128/3502/3502458.png" alt="">
+                <img src="../assets/menu.png" alt="">
             </div>
         </div>
     </header>
@@ -50,7 +54,7 @@
                     </select>
                     <div class="flavorContent">
                         <div class="imgFlavor">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR86I_XYXlakoa5ZTkjQyVdHMLdBsaj5yKJg&s" alt="">
+                            <img id="flavorImage" src="../assets/pepperoni.jpg" alt="">
                         </div>
                         <p id="flavorDescription">Pepperoni delicioso e picante</p>
                     </div>
@@ -88,17 +92,13 @@
                     <label for="delivery">Delivery:</label>
                     <input type="checkbox" id="delivery" name="delivery">
                 </div>
-                <div class="deliveryContent">
-                    <label for="whatsapp">Número do WhatsApp:</label>
-                    <input type="text" id="whatsapp" name="whatsapp" required>
-                </div>
             </section>
 
             <section class="pizzaButton">
                 <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
                 <div>
                     <button type="button" onclick="clearCart()">Limpar Carrinho</button>
-                    <button type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
+                    <button id="finishButton" type="button" onclick="finalizeOrder()">Finalizar Pedido</button>
                 </div>
             </section>
         </form>

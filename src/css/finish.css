@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    position: relative;
+    bottom: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.containerHeader{
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+header{
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+    margin: 0;
+}
+
+.imgHeader img{
+    display: block;
+    width: 100%;
+    max-width: 75px;
+}
+
+.backOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+.menuOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+.contact{
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(155, 20, 20);
+    margin-top: 50px;
+    color: white;
+    padding: 25px;
+}
+
+.contact h3{
+    font-size: 1.75rem;
+}
+
+.contact li{
+    list-style:none;
+    font-size: 1.15rem;
+}
+
+.contact li a{
+    text-decoration: underline;
+    color: white;
+}
+
+.contact > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.finishContainer{
+    background-color: rgb(155, 20, 20);
+}
+
+
+.finishStatus{
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 50px;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    height: 150px;
+}
+
+.finishStatus p{
+    margin: 0;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: bold;
+}
+
+
+.finishStatus img{
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 100px;
+    border: 4px solid white;
+    position: absolute;
+    bottom: -75px;
+}
+
+.cartContainer{
+    max-width: 350px;
+    margin:  100px auto;
+    padding: 20px 30px;
+    position: relative;
+    background-color: beige;
+}
+
+.cartContainer::before, .cartContainer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Altura do recorte triangular */
+    background-color: white;
+    z-index: -1;
+}
+
+.cartContainer::before {
+    top: -20px; /* Altura do recorte triangular */
+    background-image: 
+        linear-gradient(135deg, transparent 75%, beige 75%), 
+        linear-gradient(225deg, transparent 75%, #f4f4f4 75%);
+    background-position: left, right;
+    background-repeat: repeat-x;
+    background-size: 20px 20px;
+}
+
+.cartContainer::after {
+    bottom: -20px; /* Altura do recorte triangular */
+    background-image: 
+        linear-gradient(45deg, transparent 75%, #f4f4f4 75%), 
+        linear-gradient(-45deg, transparent 75%, #f4f4f4 75%);
+    background-position: left, right;
+    background-repeat: repeat-x;
+    background-size: 20px 20px;
+}

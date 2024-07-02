@@ -215,6 +215,7 @@ main{
     max-width: 350px;
     margin: 0 auto;
     gap: 30px;
+    justify-content: center;
 }
 
 .pizzaDelivery label{
@@ -255,7 +256,7 @@ main{
     border: none;
     background-color: white;
     box-shadow: 0px 2px 5px rgb(146, 146, 146);
-    transition: 0.7s;
+    transition: 0.2s;
     height: 40px;
 }
 

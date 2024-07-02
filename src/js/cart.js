@@ -1,4 +1,5 @@
 let cart = [];
+let finalCart = '';
 
 function addToCart() {
     const size = document.getElementById('size').value;
@@ -53,18 +54,23 @@ function updateCart() {
         // Adiciona ao preço total geral
         totalPrice += itemTotalPriceWithQuantity;
 
-        // cartHTML += `
-        //     <li>
-        //         ${item.quantity}x Pizza ${item.size}, ${item.flavor}, borda ${item.edge}, ${item.accompaniment} ${item.delivery ? 'com delivery' : 'sem delivery'}
-        //         <button type="button" onclick="removeFromCart(${index})">Remover</button>
-        //         Preço: ${formatCurrency(itemTotalPriceWithQuantity)}
-        //     </li>
-        // `;
+        cartHTML += `
+            <li>
+                <h3>${item.quantity}x Pizza ${item.size}</h3>
+                <li>Sabor: ${item.flavor} e Borda:${item.edge}</li>
+                <li>Acompanhamento: ${item.accompaniment}</li>
+                <li>Delivery? ${item.delivery ? 'Sim' : 'Não'}
+                <li>Preço: ${formatCurrency(itemTotalPriceWithQuantity)}</li>
+            </li>
+        `;
+        // <button type="button" onclick="removeFromCart(${index})">Remover</button>
     });
-
+    
+    finalCart = cartHTML;
+    localStorage.setItem('finalCart', finalCart);
     const totalPriceFormatted = formatCurrency(totalPrice);
-    // cartItemsElement.innerHTML = cartHTML;
-    totalPriceElement.textContent = `Total: ${totalPriceFormatted}`;
+    // cart.innerHTML = cartHTML;
+    totalPriceElement.innerText = `Total: ${totalPriceFormatted}`;
 }
 
 function clearCart() {
@@ -72,18 +78,23 @@ function clearCart() {
     updateCart();
 }
 
-function finalizeOrder() {
-    const whatsapp = document.getElementById('whatsapp').value;
+const finishButton = document.getElementById('finishButton')
 
-    // Formatar mensagem
+
+finishButton.addEventListener('click', function(){
+    window.location.replace('../src/finish.html')
+    
+        // Formatar mensagem
     const formattedMessage = generateOrderMessage();
 
     // Enviar mensagem pelo WhatsApp
     handleSubmitWhatsappMessage(whatsapp, formattedMessage);
+    // updateCart();
 
     // Limpar o carrinho após finalizar o pedido
-    clearCart();
-}
+    // clearCart();
+
+})
 
 function generateOrderMessage() {
     let message = 'Olá, quero os seguintes itens:\n\n';
@@ -98,3 +109,4 @@ function generateOrderMessage() {
 
     return message;
 }
+
