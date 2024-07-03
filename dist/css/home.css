@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    position: relative;
+    bottom: 0px;
+}
+
+.containerHeader{
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+header{
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+}
+
+.imgHeader img{
+    display: block;
+    width: 100%;
+    max-width: 75px;
+}
+
+.backOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+.menuOption img{
+    display: block;
+    width: 100%;
+    max-width: 35px;
+}
+
+
+.title{
+    max-width: 350px;
+    margin: 50px auto;
+    text-align: center;
+    color: rgb(155, 20, 20);
+    font-size: 1.5rem;
+}
+
+.goCarting{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: rgb(155, 20, 20);
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
+}
+
+.goCarting a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.location{
+    max-width: 350px;
+    display: flex;
+    flex-direction:column;
+    margin: 50px auto;
+}
+
+.location h3{
+    text-align: center;
+    color: rgb(155, 20, 20);
+    position: relative;
+}
+
+.location h3::before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 40%;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(155, 20, 20);
+    border-radius: 5px;
+}
+
+.location h3::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 40%;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(155, 20, 20);
+    border-radius: 5px;
+}
+
+
+.location h2{
+    text-align: center;
+    font-size: 1.25rem;
+    color: rgb(155, 20, 20);
+}
+
+.mapa{
+    max-width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    border: 2px solid rgb(155, 20, 20);
+}
+
+.contact{
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(155, 20, 20);
+    margin-top: 50px;
+    color: white;
+    padding: 25px;
+}
+
+.contact h3{
+    font-size: 1.75rem;
+}
+
+.contact li{
+    list-style:none;
+    font-size: 1.15rem;
+}
+
+.contact li a{
+    text-decoration: underline;
+    color: white;
+}
+
+.contact > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

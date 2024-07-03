@@ -215,6 +215,7 @@ main{
     max-width: 350px;
     margin: 0 auto;
     gap: 30px;
+    justify-content: center;
 }
 
 .pizzaDelivery label{
@@ -247,15 +248,16 @@ main{
 .pizzaButton > div{
     display: flex;
     gap: 20px;
+    justify-content: space-between;
 }
 
-.pizzaButton button{
+.pizzaButton .buttons{
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
     background-color: white;
     box-shadow: 0px 2px 5px rgb(146, 146, 146);
-    transition: 0.7s;
+    transition: 0.2s;
     height: 40px;
 }
 
@@ -269,11 +271,26 @@ main{
     margin: 0 auto;
     justify-content: space-between;
     color: white;
+    align-items: center;
 }
+
 
 .cartContainer{
     background-color: rgb(155, 20, 20);
+    box-shadow: 0px -4px 10px rgb(32, 32, 32);
     position: fixed;
     bottom: 0px;
     width: 100vw;
+}
+
+#finishButton{
+    width: 100%;
+    background-color: rgb(9, 225, 23);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 5px rgb(146, 146, 146);
 }

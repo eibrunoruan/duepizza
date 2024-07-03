@@ -5,9 +5,9 @@ const prices = {
         grande: { price: 25, description: "Grande (8 fatias)", image: "em_grande.jpg" }
     },
     flavor: {
-        peperoni: { price: 20, description: "Pepperoni delicioso e picante", image: "gem_peperoni.jpg" },
-        mussarela: { price: 15, description: "Mussarela clássica e saborosa", image: "mussarela.jpg" },
-        frango: { price: 18, description: "Frango suculento com tempero especial", image: "frango.jpg" }
+        peperoni: { price: 20, description: "Pepperoni delicioso e picante", image: "../assets/pepperoni.jpg" },
+        mussarela: { price: 15, description: "Mussarela clássica e saborosa", image: "../assets/mussarela.jpg" },
+        frango: { price: 18, description: "Frango suculento com tempero especial", image: "../assets/frango.jpg" }
     },
     accompaniment: {
         "coca-cola": { price: 10, description: "Refrigerante Coca-Cola (2L)", image: "coca-cola.jpg" },
@@ -21,9 +21,11 @@ const prices = {
 };
 
 const flavorSelect = document.getElementById('flavor')
+const imageFlavor = document.getElementById('flavorImage')
 
 const flavorDescription = document.getElementById('flavorDescription')
 
 flavorSelect.addEventListener('change', function(){
     flavorDescription.innerHTML = `${prices.flavor[flavorSelect.value].description}`
+    imageFlavor.src = prices.flavor[flavorSelect.value].image
 })
